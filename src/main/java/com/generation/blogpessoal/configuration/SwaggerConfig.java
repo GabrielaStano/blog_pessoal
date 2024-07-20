@@ -39,7 +39,9 @@ public class SwaggerConfig {
 
 		return openApi -> {
 			openApi.getPaths().values().forEach(pathItem -> pathItem.readOperations().forEach(operation -> {
+
 				ApiResponses apiResponses = operation.getResponses();
+
 				apiResponses.addApiResponse("200", createApiResponse("Sucesso!"));
 				apiResponses.addApiResponse("201", createApiResponse("Objeto Persistido!"));
 				apiResponses.addApiResponse("204", createApiResponse("Objeto Excluído!"));
@@ -48,13 +50,14 @@ public class SwaggerConfig {
 				apiResponses.addApiResponse("403", createApiResponse("Acesso Proibido!"));
 				apiResponses.addApiResponse("404", createApiResponse("Objeto Não Encontrado!"));
 				apiResponses.addApiResponse("500", createApiResponse("Erro na Aplicação!"));
+
 			}));
 		};
 	}
-	
-	private ApiResponse createApiResponse(String message) {
-		
-		return new ApiResponse().description(message);
-	}
 
+	private ApiResponse createApiResponse(String message) {
+
+		return new ApiResponse().description(message);
+
+	}
 }

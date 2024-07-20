@@ -20,6 +20,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.generation.blogpessoal.model.Postagem;
 import com.generation.blogpessoal.repository.PostagemRepository;
+import com.generation.blogpessoal.repository.TemaRepository;
 
 import jakarta.validation.Valid;
 
@@ -34,17 +35,18 @@ public class PostagemController {
 	private PostagemRepository postagemRepository;
 	
 	@Autowired
-	private PostagemRepository temaRepository;
+	private TemaRepository temaRepository;
 	
 	@GetMapping
 		public ResponseEntity<List<Postagem>>getAll(){
 			return ResponseEntity.ok(postagemRepository.findAll());
 			
 	}
+	
 	@GetMapping("/{id}")
 	public ResponseEntity<Postagem> getById (@PathVariable Long id){
 		return postagemRepository.findById(id)
-				.map(resposta -> ResponseEntity.ok(resposta))
+				.map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
 	}
 	

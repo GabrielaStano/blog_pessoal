@@ -63,9 +63,13 @@ public class UsuarioService {
        	var credenciais = new UsernamePasswordAuthenticationToken(usuarioLogin.get().getUsuario(), usuarioLogin.get().getSenha());
 		
        Authentication authentication = authenticationManager.authenticate(credenciais);
+       
        if (authentication.isAuthenticated()) {
+    	   
     	   Optional<Usuario> usuario = usuarioRepository.findByUsuario(usuarioLogin.get().getUsuario());
+    	   
 			if (usuario.isPresent()) {
+				
 			   usuarioLogin.get().setId(usuario.get().getId());
                 usuarioLogin.get().setNome(usuario.get().getNome());
                 usuarioLogin.get().setFoto(usuario.get().getFoto());

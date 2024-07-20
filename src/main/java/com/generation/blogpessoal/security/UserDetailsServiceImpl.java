@@ -30,5 +30,4 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 			throw new ResponseStatusException(HttpStatus.FORBIDDEN);
 	}
 
-	
 }

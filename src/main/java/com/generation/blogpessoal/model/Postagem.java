@@ -43,52 +43,52 @@ public class Postagem {
 	private Usuario usuario;
 	
 
-	public Long getId() {
-		return id;
-	}
+	 public Long getId() {
+	        return this.id;
+	    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+	    public void setId(Long id) {
+	        this.id = id;
+	    }
 
-	public String getTitulo() {
-		return titulo;
-	}
+	    public String getTitulo() {
+	        return this.titulo;
+	    }
 
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
-	}
+	    public void setTitulo(String titulo) {
+	        this.titulo = titulo;
+	    }
 
-	public String getTexto() {
-		return texto;
-	}
+	    public String getTexto() {
+	        return this.texto;
+	    }
 
-	public void setTexto(String texto) {
-		this.texto = texto;
-	}
+	    public void setTexto(String texto) {
+	        this.texto = texto;
+	    }
 
-	public LocalDateTime getData() {
-		return data;
-	}
+	    public LocalDateTime getData() {
+	        return this.data;
+	    }
 
-	public void setData(LocalDateTime data) {
-		this.data = data;
-	}
+	    public void setData(LocalDateTime data) {
+	        this.data = data;
+	    }
+	  
+	    public Tema getTema() {
+	        return this.tema;
+	    }
 
-	public Tema getTema() {
-		return tema;
-	}
+	    public void setTema(Tema tema) {
+	        this.tema = tema;
+	    }
 
-	public void setTema(Tema tema) {
-		this.tema = tema;
-	}
+	    public Usuario getUsuario() {
+	        return this.usuario;
+	    }
 
-	public Usuario getUsuario() {
-		return usuario;
-	}
+	    public void setUsuario(Usuario usuario) {
+	        this.usuario = usuario;
+	    }
 
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
 	}
-	
-}
